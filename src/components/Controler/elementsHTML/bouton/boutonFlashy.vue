@@ -86,7 +86,7 @@ export default {
   inset: -3px;
   filter: blur(10px);
 }
-
+ 
 .boutonFlashy button span{
   position: absolute;
   top: 0;

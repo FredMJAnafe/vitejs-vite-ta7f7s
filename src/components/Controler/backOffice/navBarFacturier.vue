@@ -47,8 +47,6 @@ export default {
     utilisateur: Object,
   },
   components: {
-    BoutonDeconnexion,
-    BoutonParametres,
   },
 };
 </script>
@@ -91,8 +89,8 @@ div.profil {
 }
 
 .photoProfil {
-  height: 90px;
-  width: 90px;
+  height: 70px;
+  width: 70px;
   display: inline-block;
   margin: 0 auto;
   background-repeat: no-repeat;
@@ -106,6 +104,8 @@ div.profil {
 div.profil h4 {
   color: white;
   font-weight: 300;
+  font-size: 1.3rem;
+  margin-bottom: 0;
 }
 
 div.side-menu li {

@@ -82,6 +82,7 @@ button:focus-visible {
 }
 .clickable {
   transition-property: "transform";
+  transition-duration: 0.5s;
 }
 .clickable:hover {
   cursor: pointer;
