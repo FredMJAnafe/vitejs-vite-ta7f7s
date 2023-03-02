@@ -197,7 +197,9 @@ export default {
 .editable.selected {
   cursor: pointer;
   color: white;
-  background: blue;
+  background-color: blue;
+  transition-property:"background-color";
+  transition-duration:1s;
 }
 .editable {
   background: inherit;
