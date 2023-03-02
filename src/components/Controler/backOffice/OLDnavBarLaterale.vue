@@ -41,9 +41,9 @@
         </router-link>
       </li>
       <li>
-        <a href="#">
+        <a href="#"> 
           <span class="logoNav"><font-awesome-icon icon="phone" /></span>
-          <span class="description">Déconnexion</span>
+          <span class="description clickable">Déconnexion</span>
         </a>
       </li>
     </ul>

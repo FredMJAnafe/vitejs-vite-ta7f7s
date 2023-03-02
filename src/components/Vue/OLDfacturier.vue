@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import navBarLaterale from "@/components/Controler/backOffice/navBarLaterale.vue";
+//import navBarLaterale from "@/components/Controler/backOffice/navBarLaterale.vue";
 import enteteNavigation from "@/components/Controler/backOffice/entete.vue";
 
 export default {

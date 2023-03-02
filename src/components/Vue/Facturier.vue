@@ -18,7 +18,7 @@ import bandeauHautFacturier from '@/components/Controler/backOffice/bandeauHautF
 import corpsFacturier from '@/components/Controler/backOffice/corpsFacturier.vue';
 
 export default {
-  name: 'facturierPlusModerne',
+  name: 'Facturier',
   components: {
     NavBarFacturier,
     bandeauHautFacturier,

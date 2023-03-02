@@ -10,7 +10,7 @@
         <div class="affichageIndicateurCard"></div>
       </div>
       <div class="inputBoxFacturier">
-      <span class="detailFacturier">Date de début </span>
+      <span class="detailFacturier">Début </span>
       <input
         id="dateNaissanceContrat"
         type="date"
@@ -20,7 +20,7 @@
       />
     </div>
     <div class="inputBoxFacturier">
-      <span class="detailFacturier">Date de fin </span>
+      <span class="detailFacturier">Fin </span>
       <input
         id="dateNaissanceContrat"
         type="date"
@@ -50,6 +50,7 @@ export default {
 <style scoped>
 section.card {
   max-width:250px;
+  min-width: 170px;
 }
 .cardHead{
   display: flex;
@@ -64,15 +65,24 @@ section.card {
 }
 
 .cardHead h2{
-  font-size: 16px;
+  font-size: 18px;
   color: #555;
   line-height:1;
+  margin-top: 8px;
 }
 
 .contenuCard{
   padding-left: 1rem;
   color: #555555;
   font-weight: 400;
+  text-align:left;
+}
+.contenuCard .inputBoxFacturier {
+  text-align:right;
+}
+.contenuCard input{
+  max-width:100px;
+  margin:3px;
 }
 
 </style>

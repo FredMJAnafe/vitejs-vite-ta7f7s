@@ -80,3 +80,10 @@ button:focus-visible {
 .disabled {
   pointer-events: none !important;
 }
+.clickable {
+  transition-property: "transform";
+}
+.clickable:hover {
+  cursor: pointer;
+  transform: scale(1.07);
+}

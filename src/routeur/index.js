@@ -13,12 +13,12 @@ const routes = [
         component: identification
     },
     {
-        name:'facturier',
-        path:'/facturier',
+        name:'facturierold',
+        path:'/facturierold',
         component: facturier
     },
     {
-        name:'facturierPlusModerne',
+        name:'Facturier',
         path:'/facturierUI',
         component: facturierPlusModerne
     },
