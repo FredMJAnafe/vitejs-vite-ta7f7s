@@ -1,7 +1,6 @@
 import {createRouter, createWebHistory} from "vue-router";
 import identification from "@/components/Controler/connexion/identification.vue";
-import facturier from "@/components/Vue/facturier.vue";
-import facturierPlusModerne from "@/components/Vue/facturierPlusModerne.vue";
+import Facturier from "@/components/Vue/Facturier.vue";
 import modifierProfil from "@/components/Vue/modifierProfil.vue";
 import transmettreDocumentOPCO from "@/components/Vue/transmettreDocumentOPCO.vue";
 
@@ -13,14 +12,9 @@ const routes = [
         component: identification
     },
     {
-        name:'facturierold',
-        path:'/facturierold',
-        component: facturier
-    },
-    {
-        name:'Facturier',
+        name:'facturier',
         path:'/facturierUI',
-        component: facturierPlusModerne
+        component: Facturier
     },
     {
         name:'modifierProfil',

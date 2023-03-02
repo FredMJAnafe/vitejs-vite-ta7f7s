@@ -53,7 +53,7 @@ export default {
       localStorage.setItem('prenom', reponse.extra_info.prenom);
       localStorage.setItem('avatar', reponse.extra_info.avatar);
       localStorage.setItem('mail', reponse.extra_info.mail);
-      this.$router.push({ name: 'Facturier' });
+      this.$router.push({ name: 'facturier' });
     },
     fail(r) {
       alert(r.Error_info);

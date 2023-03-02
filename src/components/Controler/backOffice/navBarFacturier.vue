@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="side-content">
-      <div class="profil">
+      <div class="profil clickable" @click="this.$router.push({ name: 'modifierProfil' })">
         <div class="photoProfil">
           <img
             v-if="this.utilisateur.photoProfil"
@@ -26,10 +26,6 @@
     <div class="side-menu">
       <ul>
         <li class="elementLienNav">
-          <BoutonParametres> </BoutonParametres>
-        </li>
-        <li class="elementLienNav" id="elementDeconnexion">
-          <BoutonDeconnexion> </BoutonDeconnexion>
         </li>
       </ul>
     </div>
@@ -39,8 +35,6 @@
 <script>
 //import logoEntreprise from '#/logo0_small.png'
 import App from '@/App.vue';
-import BoutonDeconnexion from '@/components/Controler/connexion/BoutonDeconnexion.vue';
-import BoutonParametres from '@/components/Controler/connexion/BoutonParametres.vue';
 
 export default {
   name: 'navBarFacturier',
@@ -132,7 +126,6 @@ div.side-menu span {
 #elementDeconnexion:hover {
   box-shadow: 0px 0px 3px 1px red;
 }
-
 .elementLienNav {
   border-radius: 6px 0 6px 0;
   background-color: #3d5276;
@@ -150,10 +143,5 @@ li.elementLienNav {
   text-decoration: none;
   color: var(--rose-pastel);
   box-shadow: 0px 0px 3px 1px white;
-}
-
-.lienDeconnexion{
-  padding-left: 20px;
-  padding-right: 20px;
 }
 </style>
