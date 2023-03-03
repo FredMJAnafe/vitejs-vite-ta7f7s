@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: 'FormulairOpco',
+  name: 'FormulaireEtat',
   data() {
     return {
       etat: '',

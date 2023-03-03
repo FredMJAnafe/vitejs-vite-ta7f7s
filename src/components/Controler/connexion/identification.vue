@@ -34,10 +34,26 @@ import BoutonSubmit from '@/components/Controler/elementsHTML/bouton/BoutonSubmi
 import creationJSONService from '@/services/creationJSON.service.vue';
 import configuration from '@/administration/configuration.vue';
 import construitURLService from '@/services/construitURL.service.vue';
+import connexionAPIService from '@/services/connexionAPI.service.vue';
 
 export default {
   name: 'UserIdentification',
   components: { BoutonSubmit },
+  created() {
+    //L'utilisatuer revient apres avoir ferme la page
+    if(localStorage.getItem('nom')) {
+      let url = construitURLService.methods.construitURLConnectionBack(
+        'utilisateur',
+        configuration.data().urlPossibles.obtenir), item;
+      item = JSON.parse(localStorage.getItem('itemUtilisateur')) ;
+      var _this = this;
+      connexionAPIService.methods.requete(url, item).then(reponse=>{
+        if (reponse.code_reponse === 0) {
+            _this.affichePageAccueil();
+        }
+      });
+    }
+  },
   data() {
     return {
       action: construitURLService.methods.construitURLConnectionBack(
@@ -48,11 +64,15 @@ export default {
   },
   methods: {
     ok(reponse) {
+      localStorage.setItem('itemUtilisateur', JSON.stringify(reponse.extra_info));
       localStorage.setItem('token', reponse.extra_info.token);
       localStorage.setItem('nom', reponse.extra_info.nom);
       localStorage.setItem('prenom', reponse.extra_info.prenom);
       localStorage.setItem('avatar', reponse.extra_info.avatar);
       localStorage.setItem('mail', reponse.extra_info.mail);
+      this.affichePageAccueil();
+    },
+    affichePageAccueil() {
       this.$router.push({ name: 'facturier' });
     },
     fail(r) {

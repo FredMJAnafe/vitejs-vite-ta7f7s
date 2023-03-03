@@ -1,4 +1,13 @@
 <template>
+  <Formulaire
+    :nomComposant="'FormulaireProfil'"
+    :table="'utilisateur'"
+    :item="this.itemUtilisateur"
+    :param="paramCourant"
+    :conteneurFormulaire="this"
+    v-if="afficheformulaireprofil"
+  >
+  </Formulaire>
   <section class="sidebar">
     <div class="side-header">
       <div class="logo-entreprise">
@@ -10,7 +19,7 @@
       </div>
     </div>
     <div class="side-content">
-      <div class="profil clickable" @click="this.$router.push({ name: 'modifierProfil' })">
+      <div class="profil clickable" @click="afficheformulaireprofil=true">
         <div class="photoProfil">
           <img
             v-if="this.utilisateur.photoProfil"
@@ -40,6 +49,8 @@ export default {
   name: 'navBarFacturier',
   data() {
     return {
+      itemUtilisateur:JSON.parse(localStorage.getItem('itemUtilisateur')),
+      afficheformulaireprofil:false,
       logoEntreprise: App.data().pab + '/logo0_small.png',
     };
   },

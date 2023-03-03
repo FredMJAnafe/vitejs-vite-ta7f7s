@@ -46,6 +46,7 @@ import FormulaireEtat from '@/components/Controler/backOffice/FormulaireEtat.vue
 import FormulaireFichiers from '@/components/Controler/backOffice/FormulaireFichiers.vue';
 import FormulaireFacture from '@/components/Controler/backOffice/FormulaireFacture.vue';
 import FormulaireCorbeille from '@/components/Controler/backOffice/FormulaireCorbeille.vue';
+import FormulaireProfil from '@/components/Controler/backOffice/FormulaireProfil.vue';
 
 export default {
   name: 'Formulaire',
@@ -62,6 +63,7 @@ export default {
     FormulaireFacture,
     FormulaireEtat,
     FormulaireFichiers,
+    FormulaireProfil,
   },
 
   props: {
@@ -69,11 +71,13 @@ export default {
     conteneurFormulaire: Object,
     item: Object,
     param: String,
+    table:String
   },
   data() {
     return {
+      nomTable:this.table || 'dossier',
       action: construitURLService.methods.construitURLConnectionBack(
-        'dossier',
+        this.nomTable,
         configuration.data().urlPossibles.modifier
       ),
       erreur: '',

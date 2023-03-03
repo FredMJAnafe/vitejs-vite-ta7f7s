@@ -1,10 +1,18 @@
 <script>
 var ErreurHTML = '';
+var objetEnForm = function(obj) {
+  let f = new FormData();
+  for (var n in obj) {
+    f.set(n,obj[n]);
+  }
+  return f;
+}
 var formateForm = function (form) {
   let nomsASupprimer = [],
     f,
-    r;
-  if (form) {
+    r,
+    estHTMLForm = form && form.tagName && (form.tagName.toLowerCase()=='form');
+  if (estHTMLForm) {
     nomsASupprimer = Array.from(form.querySelectorAll('.nontransmis')).reduce(
       (a, c) => {
         a.push(c.name);
@@ -13,7 +21,7 @@ var formateForm = function (form) {
       []
     );
   }
-  f = form ? new FormData(form) : new FormData();
+  f = form ? (estHTMLForm? new FormData(form): objetEnForm(form) ) : new FormData();
   r = new FormData();
   for (var pair of f.entries()) {
     let n = pair[0],
@@ -38,8 +46,6 @@ export default {
           method: 'POST',
           body: f,
         };
-      console.log('Token : ' + token);
-      console.log('f : ' + f);
       if (token && !f.has('password')) {
         /*obj.headers = {
           'Content-Type': 'multipart/form-data',
